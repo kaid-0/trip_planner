@@ -1,6 +1,9 @@
 class UserController < ApplicationController
 
 	def index
+		if session[:user_id]
+			@user = User.find_by(id: session[:user_id])
+		end
 	end
 
 	def new
@@ -19,6 +22,11 @@ class UserController < ApplicationController
 		end
 	end
 
+	def signout
+		session[:user_id] = nil
+		flash[:notice] = "Logged Out Successfully!"
+		redirect_to root_path
+	end
 
 	private
 
