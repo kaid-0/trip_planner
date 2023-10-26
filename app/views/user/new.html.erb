@@ -1,0 +1,38 @@
+<h1> Create your account here! </h1>
+
+<%= form_with model: @user, url: signup_path do |f| %>
+
+	<% if @user.errors.any? %>
+		<div class="alert alert-danger">
+		<h4> Account could not be created due to the following conditions:- </h4>
+		<ul>
+			<% @user.errors.full_messages.each do |mes| %>
+				<li><%= mes %></li>
+			<% end %>
+		</ul>
+		</div>
+	<% end %>
+
+	<div class="mb-3">
+		<%= f.label :first_name %> <%= f.text_field :first_name, class: "form-control", placeholder: "Darren" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :last_name %> <%= f.text_field :last_name, class: "form-control", placeholder: "Lewis" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :email %> <%= f.text_field :email, class: "form-control", placeholder: "kaid0@gmail.com" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :phone %> <%= f.telephone_field :phone, class: "form-control", placeholder: "9663567823" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :password %> <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :password_confirmation %> <%= f.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+	</div>
+
+	<div class="mb-3">
+		<%= f.submit "Create Account" %>
+	</div>
+<% end %>
