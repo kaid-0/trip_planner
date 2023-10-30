@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'user#new'
   post '/signup', to: 'user#signup'
 
+  get '/signin', to: 'user#signin_new'
+  post '/signin', to: 'user#signin_create'
+
   delete '/signout', to: 'user#signout'
 end

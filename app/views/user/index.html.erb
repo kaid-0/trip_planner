@@ -7,7 +7,8 @@
 	Welcome, <%= @user.first_name + ' ' + @user.last_name %>!
 
 	<%= button_to "Logout", signout_path, method: :delete %>
+<% else %>
+	<%= button_to "Login", signin_path, method: :get %>
 <% end %>
 
-<!-- Add Create Account button here -->
 <%= button_to "Create Account", signup_path, method: :get %>
