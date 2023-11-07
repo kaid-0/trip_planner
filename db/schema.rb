@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_26_094706) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_07_070532) do
+  create_table "trips", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "city"
+    t.date "from_date"
+    t.date "end_date"
+    t.integer "head_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
