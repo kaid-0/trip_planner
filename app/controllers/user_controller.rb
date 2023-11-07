@@ -18,7 +18,17 @@ class UserController < ApplicationController
 	end
 
 	def show_user
-		@user = User.find_by(id: params[:id])
+		@user = User.find(params[:id])
+	end
+
+	def update_user
+		@user = User.find(params[:id])
+		if @user.update(user_params)
+			flash[:notice] = "Account Updated Successfully!"
+			redirect_to '/users'
+		else
+			render :show_user, status: :unprocessable_entity
+		end
 	end
 
 	def signup

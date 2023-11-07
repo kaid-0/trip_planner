@@ -1,5 +1,5 @@
 <h1> Edit your account details here! </h1>
 
-<%= render 'form', link: users_path %>
+<%= render 'form', link: '/users/'+@user.id.to_s+'/edit', method: :patch %>
 
 <%= button_to "Back to Home", root_path, method: :get %>

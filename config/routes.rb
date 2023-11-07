@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   post '/signin' => 'user#signin_create'
 
   get '/users' => 'user#show'
-  get '/users/:id' => 'user#show_user'
   get '/users/:id/edit' => 'user#show_user'
-
+  patch '/users/:id/edit' => 'user#update_user'
+ 
   delete '/signout' => 'user#signout'
 end
