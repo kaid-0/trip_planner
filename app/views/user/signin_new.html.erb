@@ -1,12 +1,6 @@
 <h1>Login Page</h1>
 
-<% if flash[:alert] %>
-  <div class="alert"><%= flash[:alert] %></div>
-<% end %>
-
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
+<%= render "flash" %>
 
 <%= form_with url: signin_path do |f| %>
 	<div class="mb-3">

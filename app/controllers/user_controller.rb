@@ -10,6 +10,17 @@ class UserController < ApplicationController
 		@user = User.new
 	end
 
+	def create
+	end
+
+	def show
+		@users = User.all
+	end
+
+	def show_user
+		@user = User.find_by(id: params[:id])
+	end
+
 	def signup
 		@user = User.new(user_params)
 

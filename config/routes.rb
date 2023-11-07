@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "user#index"
 
-  get '/signup', to: 'user#new'
-  post '/signup', to: 'user#signup'
+  get '/signup' => 'user#new'
+  post '/signup' => 'user#signup'
 
-  get '/signin', to: 'user#signin_new'
-  post '/signin', to: 'user#signin_create'
+  get '/signin' => 'user#signin_new'
+  post '/signin' => 'user#signin_create'
 
-  delete '/signout', to: 'user#signout'
+  get '/users' => 'user#show'
+  get '/users/:id' => 'user#show_user'
+  get '/users/:id/edit' => 'user#show_user'
+
+  delete '/signout' => 'user#signout'
 end

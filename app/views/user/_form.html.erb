@@ -1,0 +1,24 @@
+<%= form_with model: @user, url: link do |f| %>
+	<div class="mb-3">
+		<%= f.label :first_name %> <%= f.text_field :first_name, class: "form-control", placeholder: "Darren" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :last_name %> <%= f.text_field :last_name, class: "form-control", placeholder: "Lewis" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :email %> <%= f.text_field :email, class: "form-control", placeholder: "kaid0@gmail.com" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :phone %> <%= f.telephone_field :phone, class: "form-control", placeholder: "9663567823" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :password %> <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+	</div>
+	<div class="mb-3">
+		<%= f.label :password_confirmation %> <%= f.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+	</div>
+
+	<div class="mb-3">
+		<%= f.submit(@user.new_record? ? "Sign Up" : "Update Account") %>
+	</div>
+<% end %>
