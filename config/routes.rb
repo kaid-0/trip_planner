@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/users' => 'user#show'
   get '/users/:id/edit' => 'user#show_user'
   patch '/users/:id/edit' => 'user#update_user'
+  get '/users/:id/trips' => 'user#show_user_trips'
  
   delete '/signout' => 'user#signout'
 end

@@ -31,6 +31,11 @@ class UserController < ApplicationController
 		end
 	end
 
+	def show_user_trips
+		@user = User.find(params[:id])
+		@trips = @user.trips
+	end
+
 	def signup
 		@user = User.new(user_params)
 

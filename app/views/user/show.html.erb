@@ -7,7 +7,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone</th>
-      <th colspan="3">Actions</th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
 
@@ -20,8 +20,11 @@
         <td><%= u.phone %></td>
         <td><%= link_to 'Show', '/users/'+u.id.to_s+'/edit', method: :get %></td>
         <td><%= link_to 'Edit', '/users/'+u.id.to_s+'/edit', method: :get %></td>
+        <td><%= link_to 'Trips', '/users/'+u.id.to_s+'/trips', method: :get %> </td>
         <td><%= link_to 'Delete' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= button_to "Homepage", root_path, method: :get %>

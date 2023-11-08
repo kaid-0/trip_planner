@@ -9,7 +9,12 @@
 	Welcome, <%= @user.first_name + ' ' + @user.last_name %>!
 
 	<%= button_to "Edit", '/users/'+@user.id.to_s+'/edit', method: :get %>
+	<%= button_to "Trips", '/users/'+@user.id.to_s+'/trips', method: :get %>
 	<%= button_to "Logout", signout_path, method: :delete %>
+	<hr>
+	<%= link_to "Create Trip" %>
+	<hr>
+
 <% else %>
 	<%= button_to "Login", signin_path, method: :get %>
 <% end %>
