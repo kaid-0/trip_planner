@@ -12,9 +12,9 @@
 	<%= button_to "Trips", '/users/'+@user.id.to_s+'/trips', method: :get %>
 	<%= button_to "Logout", signout_path, method: :delete %>
 	<hr>
-	<%= link_to "Create Trip" %>
+	<%= link_to "Create Trip", create_trip_path(user_id: @user.id), method: :get %>
 	<hr>
-
+	<%= button_to "All Users", users_path(user_id: session[:user_id]), method: :get %>
 <% else %>
 	<%= button_to "Login", signin_path, method: :get %>
 <% end %>

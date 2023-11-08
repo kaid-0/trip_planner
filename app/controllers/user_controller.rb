@@ -11,10 +11,24 @@ class UserController < ApplicationController
 	end
 
 	def create
+		@user = User.new(user_params)
+
+		if @user.save
+			session[:user_id] = @user.id
+			flash[:notice] = "Account Created Successfully!"
+			redirect_to root_path
+		else
+			render :new, status: :unprocessable_entity
+		end
 	end
 
 	def show
-		@users = User.all
+		if session[:user_id] == 1
+			@users = User.all
+		else
+			flash[:notice] = "Only Admin can view the page"
+			redirect_to root_path
+		end
 	end
 
 	def show_user
@@ -34,18 +48,6 @@ class UserController < ApplicationController
 	def show_user_trips
 		@user = User.find(params[:id])
 		@trips = @user.trips
-	end
-
-	def signup
-		@user = User.new(user_params)
-
-		if @user.save
-			session[:user_id] = @user.id
-			flash[:notice] = "Account Created Successfully!"
-			redirect_to root_path
-		else
-			render :new, status: :unprocessable_entity
-		end
 	end
 
 	def signout

@@ -1,0 +1,5 @@
+<h1> Create a Trip </h1>
+
+<%= render 'form', link: create_trip_path(user_id: params[:user_id]), method: :post %>
+
+<%= button_to 'HomePage', root_path, method: :get %>

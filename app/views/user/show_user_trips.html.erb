@@ -27,4 +27,7 @@
   </tbody>
 </table>
 
+<hr>
+<%= link_to "Create Trip", create_trip_path(user_id: params[:id]), method: :get %>
+<hr>
 <%= button_to "Homepage", root_path, method: :get %>

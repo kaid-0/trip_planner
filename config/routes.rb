@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root "user#index"
 
   get '/signup' => 'user#new'
-  post '/signup' => 'user#signup'
+  post '/signup' => 'user#create'
 
   get '/signin' => 'user#signin_new'
   post '/signin' => 'user#signin_create'
@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'user#show_user'
   patch '/users/:id/edit' => 'user#update_user'
   get '/users/:id/trips' => 'user#show_user_trips'
+
+  get '/create_trip' => 'trip#new'
+  post '/create_trip' => 'trip#create'
  
   delete '/signout' => 'user#signout'
 end
