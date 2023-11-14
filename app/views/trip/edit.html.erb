@@ -1,0 +1,5 @@
+<h1> Edit Trip </h1>
+
+<%= render 'form', link: '/trips/'+@trip.id.to_s+'/edit', method: :patch %>
+
+<%= button_to 'Homepage', root_path, method: :get %>

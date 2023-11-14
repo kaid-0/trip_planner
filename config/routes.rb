@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/signin' => 'user#signin_new'
   post '/signin' => 'user#signin_create'
+  delete '/signout' => 'user#signout'
 
   get '/users' => 'user#show'
   get '/users/:id/edit' => 'user#show_user'
@@ -20,8 +21,10 @@ Rails.application.routes.draw do
   get '/users/:id/trips' => 'user#show_user_trips'
   delete '/users/:id' => 'user#delete_user'
 
-  get '/create_trip' => 'trip#new'
-  post '/create_trip' => 'trip#create'
+  get '/trip/new' => 'trip#new'
+  post '/trip/new' => 'trip#create'
+  get '/trips/:id/edit' => 'trip#edit'
+  patch '/trips/:id/edit' => 'trip#update'
  
-  delete '/signout' => 'user#signout'
+  
 end
