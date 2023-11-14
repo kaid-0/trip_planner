@@ -37,6 +37,6 @@ class TripController < ApplicationController
 	private
 
 	def trip_params
-		params[:trip] ? params.require(:trip).permit(:city, :from_date, :end_date, :head_count) : params.permit(:user_id, :city, :from_date, :end_date, :head_count)
+		params.has_key?(:trip) ? params.require(:trip).permit(:city, :from_date, :end_date, :head_count) : params.permit(:user_id, :city, :from_date, :end_date, :head_count)
 	end
 end
