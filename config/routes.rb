@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post '/trip/new' => 'trip#create'
   get '/trips/:id/edit' => 'trip#edit'
   patch '/trips/:id/edit' => 'trip#update'
+  delete '/trips/:id' => 'trip#destroy'
  
   
 end
