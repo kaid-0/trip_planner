@@ -68,3 +68,5 @@ group :test do
 end
 
 gem "geocoder", "~> 1.8"
+
+gem "httparty", "~> 0.21.0"
