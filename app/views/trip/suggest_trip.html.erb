@@ -1,0 +1,52 @@
+<label for="name">Search your destination city here:</label>
+<input type="text" id="name" name="name" />
+
+
+<h5>Showing top locations for <%= @loc_name %>:- </h5>
+
+<table class="table">
+	<thead>
+		<th>Hotels</th>
+	</thead>
+
+	<tbody>
+		<% @hotel_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<table class="table">
+	<thead>
+		<th>Restaurants</th>
+	</thead>
+
+	<tbody>
+		<% @restaurant_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<table class="table">
+	<thead>
+		<th>Tourist Attractions</th>
+	</thead>
+
+	<tbody>
+		<% @tourist_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
