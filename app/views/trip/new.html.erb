@@ -1,5 +1,59 @@
 <h1> Create a Trip </h1>
 
 <%= render 'form', link: trip_new_path(user_id: params[:user_id]), method: :post %>
+<br>
+
+<!-- <label for="name">Search your destination city here:</label>
+<input type="text" id="name" name="name" /> -->
+
+
+<h5>Showing top locations for <%= @loc_name %>:- </h5>
+
+<table class="table">
+	<thead>
+		<th>Hotels</th>
+	</thead>
+
+	<tbody>
+		<% @hotel_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> <button type="button" class="btn btn-primary btn-sm">Add Location</button> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<table class="table">
+	<thead>
+		<th>Restaurants</th>
+	</thead>
+
+	<tbody>
+		<% @restaurant_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> <button type="button" class="btn btn-primary btn-sm">Add Location</button> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<table class="table">
+	<thead>
+		<th>Tourist Attractions</th>
+	</thead>
+
+	<tbody>
+		<% @tourist_response["suggestions"].each do |sug| %>
+			<tr>
+				<td> <%= sug["name"] %> <button type="button" class="btn btn-primary btn-sm">Add Location</button> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
 
 <%= button_to 'HomePage', root_path, method: :get %>

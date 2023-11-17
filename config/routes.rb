@@ -26,7 +26,5 @@ Rails.application.routes.draw do
   get '/trips/:id/edit' => 'trip#edit'
   patch '/trips/:id/edit' => 'trip#update'
   delete '/trips/:id' => 'trip#destroy'
- 
-  get '/search' => 'trip#suggest_trip'
   
 end
