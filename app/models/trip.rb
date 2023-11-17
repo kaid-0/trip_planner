@@ -1,6 +1,10 @@
 class Trip < ApplicationRecord
 	belongs_to :user
 
+	has_many :hotels
+	has_many :restaurants
+	has_many :tourists
+
 	def from_date_before_end_date
 		if from_date > end_date
 			errors.add(:from_date, "-> Starting Date has to occur before End Date of the trip")
